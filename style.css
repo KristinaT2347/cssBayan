@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(209, 201, 194);
+    background-color: rgb(228, 209, 222);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,7 +28,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    border-top: 1px solid rgb(166, 159, 150);
+    border-top: 1px solid rgb(219, 103, 182);
     padding-top: 5px
 }
 
@@ -39,7 +39,7 @@ body {
 }
 
 .mem-title {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     cursor: pointer;
 }
@@ -55,17 +55,32 @@ body {
     overflow: hidden;
 }
 
-.mem--radio:checked ~ .mem--content,
+.mem--radio:checked~.mem--content,
 .mem:hover .mem--content {
     height: 600px;
 }
 
-.mem--radio:checked ~ .title-container .plus.plus {
+.plus.plus.plus,
+.cross.cross.cross {
     display: none;
 }
 
-.mem--radio:not(:checked) ~ .title-container .cross.cross {
+.mem--radio:checked~.title-container .cross.cross,
+.mem:hover .mem--radio:not(:checked)~.title-container .cross.cross {
+    display: inline-block;
+}
+
+.mem:hover .mem--radio:not(:checked)~.title-container .plus.plus {
     display: none;
+}
+
+.mem--radio:not(:checked)~.title-container .plus.plus {
+    display: inline-block;
+}
+
+.mems-container:hover .mem--radio:not(:checked)~.title-container .mem-title,
+.mems-container:hover .mem--radio:not(:checked)~.title-container .controls {
+    color: palevioletred;
 }
 
 .img-container {
@@ -76,11 +91,11 @@ body {
     max-height: 100%;
 }
 
-.fa.fa {
+.controls {
     cursor: pointer;
     display: none;
 }
 
-.mems-container:hover .fa.fa {
+.mems-container:hover .controls {
     display: inline-block;
 }
