@@ -89,6 +89,7 @@ body {
 
 .mem-img {
     max-height: 100%;
+    max-width: 100%;
 }
 
 .controls {
@@ -98,4 +99,42 @@ body {
 
 .mems-container:hover .controls {
     display: inline-block;
+}
+
+@media (min-width: 820px) and (max-width: 1919px) {
+
+    .title {
+        font-size: 28px;
+    }
+
+    .mems-container {
+        gap: 19px;
+        width: 700px;
+    }
+
+    .mem-title {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 819px) {
+
+    .title {
+        font-size: 24px;
+    }
+
+    .mems-container {
+        gap: 10px;
+        width: 300px;
+    }
+
+    .mem-title {
+        font-size: 16px;
+    }
+
+    .mem--radio:checked~.mem--content,
+    .mem:hover .mem--content {
+        height: 372px;
+    }
+
 }
