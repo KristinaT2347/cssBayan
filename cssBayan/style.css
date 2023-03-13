@@ -1,0 +1,140 @@
+body {
+    background-color: rgb(228, 209, 222);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+
+.mems-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    cursor: pointer;
+    width: 764px;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.mem {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px solid rgb(219, 103, 182);
+    padding-top: 5px
+}
+
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mem-title {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.mem--radio {
+    display: none;
+}
+
+.mem--content {
+    height: 0px;
+    transition: height 1s;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.mem--radio:checked~.mem--content,
+.mem:hover .mem--content {
+    height: 600px;
+}
+
+.plus.plus.plus,
+.cross.cross.cross {
+    display: none;
+}
+
+.mem--radio:checked~.title-container .cross.cross,
+.mem:hover .mem--radio:not(:checked)~.title-container .cross.cross {
+    display: inline-block;
+}
+
+.mem:hover .mem--radio:not(:checked)~.title-container .plus.plus {
+    display: none;
+}
+
+.mem--radio:not(:checked)~.title-container .plus.plus {
+    display: inline-block;
+}
+
+.mems-container:hover .mem--radio:not(:checked)~.title-container .mem-title,
+.mems-container:hover .mem--radio:not(:checked)~.title-container .controls {
+    color: palevioletred;
+}
+
+.img-container {
+    height: 600px;
+}
+
+.mem-img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.controls {
+    cursor: pointer;
+    display: none;
+}
+
+.mems-container:hover .controls {
+    display: inline-block;
+}
+
+@media (min-width: 820px) and (max-width: 1919px) {
+
+    .title {
+        font-size: 28px;
+    }
+
+    .mems-container {
+        gap: 19px;
+        width: 700px;
+    }
+
+    .mem-title {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 819px) {
+
+    .title {
+        font-size: 24px;
+    }
+
+    .mems-container {
+        gap: 10px;
+        width: 300px;
+    }
+
+    .mem-title {
+        font-size: 16px;
+    }
+
+    .mem--radio:checked~.mem--content,
+    .mem:hover .mem--content {
+        height: 372px;
+    }
+
+}
